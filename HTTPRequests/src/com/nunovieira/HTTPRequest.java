@@ -29,6 +29,9 @@ public class HTTPRequest {
 	public static String sendRequest(String url, Map<String, String> textArgs, Map<String, String> fileArgs, String httpMethod){
 		try{
 			
+			if(textArgs == null) textArgs = new HashMap<String, String>();
+			if(fileArgs == null) fileArgs = new HashMap<String, String>();
+			
 			if(httpMethod.equals("GET") || httpMethod.equals("DELETE")){
 				HttpClient client = new DefaultHttpClient();
 				
